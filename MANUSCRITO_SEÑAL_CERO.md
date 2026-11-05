@@ -4,36 +4,30 @@
 
 ---
 
-### Página de créditos
+<!--CREDITS-->
+SEÑAL CERO
 
-**SEÑAL CERO**
-
-© [Año] David Fernández
+© 2026 David Fernández
 
 Todos los derechos reservados. Ninguna parte de esta publicación puede ser reproducida, distribuida o transmitida en cualquier forma o por cualquier medio, sin el permiso previo y por escrito del autor, salvo citas breves en reseñas.
 
 Esta es una obra de ficción. Los nombres, personajes, lugares y sucesos son producto de la imaginación del autor o se usan de manera ficticia. Cualquier parecido con personas reales, vivas o fallecidas, o con hechos reales, es pura coincidencia.
 
-Primera edición: [Mes, Año]
-
-Diseño de cubierta: [su nombre / diseñador]
-
-ISBN: [lo asigna KDP al publicar]
+Primera edición, 2026.
 
 Publicado de forma independiente.
 
 ---
 
-### Dedicatoria
-
+<!--CENTER-->
 *Para quien, alguna vez, se ha perdido con la gente correcta.*
 
 ---
 
-### Epígrafe
+<!--CENTER-->
+*«Sin cobertura en los próximos 40 km.»*
 
-> *«Sin cobertura en los próximos 40 km.»*
-> — Un cartel oxidado que nadie lee a tiempo
+*— Un cartel oxidado que nadie lee a tiempo*
 
 ---
 

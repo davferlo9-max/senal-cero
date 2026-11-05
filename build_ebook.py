@@ -46,27 +46,43 @@ def parse_markdown(text):
             sections.append((cur_title, cur_level, current_paras))
         current_paras = []
 
+    cur_cls = None  # clase especial de la seccion: 'credits' | 'center' | None
+
+    def flush_section2():
+        nonlocal current_paras, cur_title, cur_level, cur_cls
+        flush_para()
+        if cur_title is not None or current_paras:
+            sections.append((cur_title, cur_level, current_paras, cur_cls))
+        current_paras = []
+        cur_title = None
+        cur_level = 0
+        cur_cls = None
+
+    # redefinimos flush_section para incluir la clase
     for ln in lines:
         s = ln.rstrip("\n")
-        if s.startswith("### "):
-            flush_section()
-            cur_title = s[4:].strip()
-            cur_level = 3
+        if s.strip() == "<!--CREDITS-->":
+            flush_section2()          # cierra lo anterior y abre pagina nueva
+            cur_cls = "credits"
+        elif s.strip() == "<!--CENTER-->":
+            flush_section2()          # cierra lo anterior y abre pagina nueva
+            cur_cls = "center"
+        elif s.startswith("### "):
+            flush_section2()
+            cur_title = s[4:].strip(); cur_level = 3
         elif s.startswith("## "):
-            flush_section()
-            cur_title = s[3:].strip()
-            cur_level = 2
+            flush_section2()
+            cur_title = s[3:].strip(); cur_level = 2
         elif s.startswith("# "):
-            flush_section()
-            cur_title = s[2:].strip()
-            cur_level = 1
+            flush_section2()
+            cur_title = s[2:].strip(); cur_level = 1
         elif s.strip() == "---":
             flush_para()
         elif s.strip() == "":
             flush_para()
         else:
             buf.append(s)
-    flush_section()
+    flush_section2()
     return sections
 
 # ---------------------------------------------------------------------------
@@ -84,14 +100,20 @@ def inline_html(txt):
 # ---------------------------------------------------------------------------
 def build_epub(sections):
     # Agrupar en "documentos": cada capítulo (###) y cada parte (##) es un archivo.
-    docs = []   # (id, titulo_nav, xhtml)
+    docs = []   # (id, titulo_nav, nivel, xhtml, in_nav)
     idx = 0
-    pending_part = None
-    for title, level, paras in sections:
+    for sec in sections:
+        title, level, paras = sec[0], sec[1], sec[2]
+        cls = sec[3] if len(sec) > 3 else None
         if title is None and not paras:
             continue
         idx += 1
         body = []
+        pclass = ""
+        if cls == "credits":
+            pclass = " class='credits'"
+        elif cls == "center":
+            pclass = " class='center'"
         if level == 1:
             body.append(f"<h1 class='booktitle'>{inline_html(title)}</h1>")
         elif level == 2:
@@ -101,8 +123,8 @@ def build_epub(sections):
         elif title:
             body.append(f"<p class='frontmatter'>{inline_html(title)}</p>")
         for p in paras:
-            body.append(f"<p>{inline_html(p)}</p>")
-        nav_title = title if title else f"Sección {idx}"
+            body.append(f"<p{pclass}>{inline_html(p)}</p>")
+        nav_title = title if title else ""
         xhtml = f"""<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{LANG}" lang="{LANG}">
@@ -111,21 +133,24 @@ def build_epub(sections):
 <body>
 {chr(10).join(body)}
 </body></html>"""
-        docs.append((f"chap{idx:03d}", nav_title, level, xhtml))
+        in_nav = bool(title) and level in (1, 2, 3)
+        docs.append((f"chap{idx:03d}", nav_title, level, xhtml, in_nav))
 
-    css = """body{font-family:Georgia,serif;line-height:1.5;margin:5%;}
-h1.booktitle{text-align:center;font-size:2.2em;margin-top:30%;}
+    css = """body{font-family:Georgia,serif;line-height:1.5;margin:6%;}
+h1.booktitle{text-align:center;font-size:2.4em;margin-top:30%;letter-spacing:2px;}
 h2.part{text-align:center;font-size:1.6em;margin-top:25%;page-break-before:always;color:#333;}
 h2.chapter{font-size:1.3em;margin-top:2em;page-break-before:always;}
 p{text-indent:1.3em;margin:0;text-align:justify;}
-p.frontmatter{text-align:center;font-style:italic;text-indent:0;}
+p.frontmatter{text-align:center;font-style:italic;text-indent:0;margin-top:0.6em;}
+p.credits{text-indent:0;text-align:left;font-size:0.82em;margin:0.5em 0;color:#222;}
+p.center{text-align:center;font-style:italic;text-indent:0;margin:2em 0;}
 """
 
     manifest, spine, nav_items = [], [], []
-    for cid, nav_title, level, _ in docs:
+    for cid, nav_title, level, _, in_nav in docs:
         manifest.append(f'<item id="{cid}" href="{cid}.xhtml" media-type="application/xhtml+xml"/>')
         spine.append(f'<itemref idref="{cid}"/>')
-        if level in (1, 2, 3):
+        if in_nav:
             nav_items.append(f'<li><a href="{cid}.xhtml">{html.escape(nav_title)}</a></li>')
 
     opf = f"""<?xml version="1.0" encoding="utf-8"?>
@@ -170,7 +195,7 @@ p.frontmatter{text-align:center;font-style:italic;text-indent:0;}
         z.writestr("OEBPS/content.opf", opf)
         z.writestr("OEBPS/nav.xhtml", nav)
         z.writestr("OEBPS/style.css", css)
-        for cid, _, _, xhtml in docs:
+        for cid, _, _, xhtml, _ in docs:
             z.writestr(f"OEBPS/{cid}.xhtml", xhtml)
     return out, len(docs)
 
@@ -200,7 +225,9 @@ def docx_runs(txt):
 
 def build_docx(sections):
     body = []
-    for title, level, paras in sections:
+    for sec in sections:
+        title, level, paras = sec[0], sec[1], sec[2]
+        cls = sec[3] if len(sec) > 3 else None
         if title:
             if level == 1:
                 style = "Title"
@@ -213,7 +240,12 @@ def build_docx(sections):
                 f'<w:pageBreakBefore/></w:pPr>{docx_runs(title)}</w:p>'
             )
         for p in paras:
-            body.append(f'<w:p>{docx_runs(p)}</w:p>')
+            if cls == "center":
+                body.append(f'<w:p><w:pPr><w:jc w:val="center"/></w:pPr>{docx_runs(p)}</w:p>')
+            elif cls == "credits":
+                body.append(f'<w:p><w:pPr><w:jc w:val="left"/></w:pPr>{docx_runs(p)}</w:p>')
+            else:
+                body.append(f'<w:p>{docx_runs(p)}</w:p>')
 
     document = f"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
