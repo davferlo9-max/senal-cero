@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEÑAL CERO — Visor y exportador de cubiertas</title>
+<style>
+  body{font-family:system-ui,Arial,sans-serif;background:#1a1a1a;color:#eee;margin:0;padding:24px;}
+  h1{color:#ff5a4d;} h2{color:#e8b36a;margin-top:40px;}
+  .wrap{max-width:1100px;margin:0 auto;}
+  .card{background:#242424;border-radius:12px;padding:20px;margin:20px 0;}
+  button{background:#ff5a4d;color:#fff;border:0;padding:12px 20px;border-radius:8px;font-size:16px;cursor:pointer;margin:6px 6px 6px 0;}
+  button:hover{background:#e04434;}
+  img{max-width:100%;height:auto;border:1px solid #444;border-radius:8px;display:block;margin:12px 0;background:#000;}
+  code{background:#333;padding:2px 6px;border-radius:4px;}
+  .note{background:#2a2420;border-left:4px solid #e8b36a;padding:12px 16px;border-radius:4px;}
+  ol li{margin:8px 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>SEÑAL CERO — Cubiertas</h1>
+  <p>Visor de las cubiertas generadas. Pulsa los botones para <b>descargar cada una como PNG de alta resolución (300 dpi)</b>, listo para subir a Amazon KDP.</p>
+
+  <div class="note">
+    <b>Cómo usar esta página:</b> ábrela en tu navegador (doble clic sobre el archivo).
+    Verás las cubiertas abajo. Pulsa “Descargar PNG” para guardar la imagen final.
+    Antes de exportar la cubierta completa, pulsa “Ocultar guías” para quitar las líneas azules de corte.
+  </div>
+
+  <h2>1 · Portada frontal (eBook y tapa) — 1500 × 2400 px</h2>
+  <div class="card">
+    <button onclick="exportSVG('front','portada_frontal', 1500, 2400)">⬇ Descargar PNG (1500×2400)</button>
+    <object id="front" data="01_portada_frontal.svg" type="image/svg+xml" style="width:300px;"></object>
+  </div>
+
+  <h2>2 · Cubierta completa (tapa blanda) — 3190 × 2475 px</h2>
+  <p>Contraportada + lomo + portada. Incluye zona de ISBN y guías de corte.</p>
+  <div class="card">
+    <button onclick="toggleGuides()">👁 Ocultar / mostrar guías</button>
+    <button onclick="exportSVG('full','cubierta_completa', 3190, 2475)">⬇ Descargar PNG (3190×2475)</button>
+    <object id="full" data="02_cubierta_completa.svg" type="image/svg+xml" style="width:100%;"></object>
+  </div>
+
+  <h2>Exportar sin navegador (alternativa con Inkscape)</h2>
+  <p>Si tienes <a href="https://inkscape.org" style="color:#e8b36a">Inkscape</a> instalado:</p>
+  <pre style="background:#111;padding:14px;border-radius:8px;overflow:auto;">
+inkscape 01_portada_frontal.svg   --export-type=png -w 1500 -h 2400 -o portada_frontal.png
+inkscape 02_cubierta_completa.svg --export-type=png -w 3190 -h 2475 -o cubierta_completa.png</pre>
+
+<script>
+function toggleGuides(){
+  const doc = document.getElementById('full').contentDocument;
+  if(!doc) return alert('Espera a que cargue el SVG y reintenta.');
+  // Las guías son el último <g> con stroke azul discontinuo
+  const groups = doc.querySelectorAll('g');
+  const g = groups[groups.length-1];
+  g.style.display = (g.style.display==='none') ? '' : 'none';
+}
+function exportSVG(objId, name, w, h){
+  const obj = document.getElementById(objId);
+  const svgDoc = obj.contentDocument;
+  if(!svgDoc) return alert('El SVG aún no ha cargado. Espera un segundo y reintenta.');
+  const svgEl = svgDoc.documentElement;
+  const xml = new XMLSerializer().serializeToString(svgEl);
+  const blob = new Blob([xml], {type:'image/svg+xml;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = function(){
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#1a2030'; ctx.fillRect(0,0,w,h);
+    ctx.drawImage(img, 0, 0, w, h);
+    URL.revokeObjectURL(url);
+    c.toBlob(function(b){
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(b);
+      a.download = name + '.png';
+      a.click();
+    }, 'image/png');
+  };
+  img.onerror = ()=>alert('No se pudo rasterizar. Usa la alternativa de Inkscape.');
+  img.src = url;
+}
+</script>
+</div>
+</body>
+</html>

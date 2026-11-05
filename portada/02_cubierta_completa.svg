@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CUBIERTA COMPLETA DESPLEGADA · SEÑAL CERO
+     Tapa blanda KDP 12,7 x 20,32 cm (5x8"), 170 pág., lomo 9,72 mm
+     Lienzo con sangrado: 3190 x 2475 px @300dpi
+     Orden (izq->der): CONTRAPORTADA | LOMO | PORTADA
+     Zonas: sangrado 37.5px cada borde. Lomo 115px centrado. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="3190" height="2475" viewBox="0 0 3190 2475">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2030"/><stop offset="45%" stop-color="#2b3a4a"/>
+      <stop offset="70%" stop-color="#4a5d63"/><stop offset="86%" stop-color="#c98a4b"/>
+      <stop offset="100%" stop-color="#e8b36a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#ffd89b" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffd89b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mN" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121820"/><stop offset="100%" stop-color="#0a0e14"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo continuo en toda la cubierta -->
+  <rect width="3190" height="2475" fill="url(#sky)"/>
+
+  <!-- ===================== PORTADA (derecha) ===================== -->
+  <!-- La portada ocupa de x=1652 (fin de lomo) a x=3190 -->
+  <g>
+    <ellipse cx="2420" cy="1800" rx="950" ry="720" fill="url(#glow)"/>
+    <path d="M1652 1560 L1900 1300 L2130 1480 L2370 1200 L2630 1470 L2880 1260 L3190 1500 L3190 2475 L1652 2475 Z" fill="#202a30" opacity="0.9"/>
+    <path d="M1652 1760 L1840 1600 L2020 1740 L2220 1540 L2420 1730 L2640 1560 L2860 1740 L3190 1600 L3190 2475 L1652 2475 Z" fill="url(#mN)"/>
+    <!-- grupo diminuto -->
+    <g fill="#05070a">
+      <g transform="translate(2360,1700)"><circle r="5"/><rect x="-4" y="4" width="8" height="20" rx="3"/></g>
+      <g transform="translate(2385,1706)"><circle r="5"/><rect x="-4" y="4" width="8" height="19" rx="3"/></g>
+      <g transform="translate(2410,1702)"><circle r="5"/><rect x="-4" y="4" width="8" height="21" rx="3"/></g>
+      <g transform="translate(2435,1708)"><circle r="4.5"/><rect x="-4" y="4" width="8" height="18" rx="3"/></g>
+      <g transform="translate(2458,1704)"><circle r="5"/><rect x="-4" y="4" width="8" height="20" rx="3"/></g>
+    </g>
+    <!-- sello sin cobertura -->
+    <g transform="translate(2980,250)" opacity="0.92">
+      <g fill="none" stroke="#e8b36a" stroke-width="7">
+        <rect x="0" y="60" width="22" height="30"/><rect x="34" y="42" width="22" height="48"/>
+        <rect x="68" y="22" width="22" height="68"/><rect x="102" y="2" width="22" height="88"/>
+      </g>
+      <line x1="-10" y1="100" x2="134" y2="-6" stroke="#ff5a4d" stroke-width="9" stroke-linecap="round"/>
+    </g>
+    <!-- título -->
+    <text x="2421" y="640" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="210" letter-spacing="6" fill="#ffffff">SEÑAL</text>
+    <text x="2421" y="850" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="210" letter-spacing="16" fill="#ff5a4d">CERO</text>
+    <text x="2421" y="945" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="48" fill="#eaeaea">Diecisiete días. Cero cobertura.</text>
+    <text x="2421" y="1008" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="48" fill="#eaeaea">Una sola forma de salir.</text>
+    <!-- autor -->
+    <line x1="2210" y1="2250" x2="2630" y2="2250" stroke="#e8b36a" stroke-width="3"/>
+    <text x="2421" y="2330" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="8" fill="#ffffff">DAVID FERNÁNDEZ</text>
+  </g>
+
+  <!-- ===================== LOMO (centro) ===================== -->
+  <!-- x de 1537.5 a 1652.5 (115 px) -->
+  <rect x="1537" y="0" width="116" height="2475" fill="#0d1218"/>
+  <text x="1595" y="1238" text-anchor="middle" transform="rotate(90 1595 1238)"
+        font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="58" letter-spacing="4" fill="#ffffff">SEÑAL CERO</text>
+  <text x="1595" y="1238" text-anchor="middle" transform="rotate(90 1595 1238)" dx="430"
+        font-family="Arial, sans-serif" font-size="34" letter-spacing="2" fill="#e8b36a">D. FERNÁNDEZ</text>
+
+  <!-- ===================== CONTRAPORTADA (izquierda) ===================== -->
+  <!-- de x=0 a x=1537 -->
+  <g>
+    <!-- panel translúcido para legibilidad del texto -->
+    <rect x="150" y="300" width="1240" height="1680" rx="24" fill="#0d1218" opacity="0.62"/>
+
+    <!-- Gancho triple -->
+    <text x="770" y="470" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="78" fill="#ff5a4d">NO HAY ADULTOS.</text>
+    <text x="770" y="570" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="78" fill="#ff5a4d">NO HAY COBERTURA.</text>
+    <text x="770" y="670" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="78" fill="#ffffff">NO HAY UN PLAN.</text>
+
+    <!-- Sinopsis (líneas; SVG no ajusta texto automáticamente) -->
+    <g font-family="Georgia, serif" font-size="46" fill="#eaeaea">
+      <text x="230" y="830">Cuando el autobús del campamento se sale de</text>
+      <text x="230" y="892">la carretera y rueda ladera abajo, Nora</text>
+      <text x="230" y="954">descubre dos cosas a la vez: que ha</text>
+      <text x="230" y="1016">sobrevivido, y que sus listas, sus apps y su</text>
+      <text x="230" y="1078">manía de controlarlo todo no valen nada</text>
+      <text x="230" y="1140">cuando el móvil marca «Sin servicio».</text>
+
+      <text x="230" y="1250">Atrapada en la montaña con las tres</text>
+      <text x="230" y="1312">personas que menos soporta de su clase, le</text>
+      <text x="230" y="1374">quedan diecisiete días, una cuchara, un</text>
+      <text x="230" y="1436">paquete de gusanitos y una única forma de</text>
+      <text x="230" y="1498">salir con vida:</text>
+    </g>
+    <text x="230" y="1600" font-family="Georgia, serif" font-weight="bold" font-style="italic" font-size="52" fill="#ffffff">aprender a confiar en los demás.</text>
+    <text x="230" y="1690" font-family="Georgia, serif" font-style="italic" font-size="46" fill="#e8b36a">Qué horror.</text>
+
+    <!-- línea de cierre -->
+    <g font-family="Georgia, serif" font-style="italic" font-size="36" fill="#c9c9c9">
+      <text x="770" y="1820" text-anchor="middle">Una aventura de supervivencia trepidante y con</text>
+      <text x="770" y="1868" text-anchor="middle">mucho humor, para lectores de Hatchet y para</text>
+      <text x="770" y="1916" text-anchor="middle">quien se haya preguntado qué haría si el mundo</text>
+      <text x="770" y="1964" text-anchor="middle">dejara, de golpe, de responder.</text>
+    </g>
+
+    <!-- zona reservada para ISBN / código de barras (KDP lo coloca) -->
+    <rect x="1070" y="2120" width="380" height="220" rx="10" fill="#ffffff" opacity="0.9"/>
+    <text x="1260" y="2240" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#333">ISBN / código</text>
+    <text x="1260" y="2280" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#333">(lo pone KDP)</text>
+
+    <!-- categoría -->
+    <text x="230" y="2230" font-family="Arial, sans-serif" font-size="34" fill="#e8b36a">Ficción juvenil · Aventura</text>
+    <text x="230" y="2282" font-family="Arial, sans-serif" font-size="34" fill="#e8b36a">A partir de 12 años</text>
+  </g>
+
+  <!-- Guías de seguridad (líneas de corte y lomo) - ELIMINAR antes de exportar final -->
+  <g stroke="#00e0ff" stroke-width="2" stroke-dasharray="14 10" opacity="0.45" fill="none">
+    <rect x="37.5" y="37.5" width="3115" height="2400"/>
+    <line x1="1537" y1="0" x2="1537" y2="2475"/>
+    <line x1="1653" y1="0" x2="1653" y2="2475"/>
+  </g>
+</svg>

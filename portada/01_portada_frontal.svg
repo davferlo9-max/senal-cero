@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PORTADA FRONTAL · SEÑAL CERO · 1500 x 2400 px (5x8" @300dpi, eBook y tapa) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="2400" viewBox="0 0 1500 2400">
+  <defs>
+    <!-- Cielo de tormenta que se abre a un rayo de luz -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#1a2030"/>
+      <stop offset="45%" stop-color="#2b3a4a"/>
+      <stop offset="70%" stop-color="#4a5d63"/>
+      <stop offset="86%" stop-color="#c98a4b"/>
+      <stop offset="100%" stop-color="#e8b36a"/>
+    </linearGradient>
+    <!-- Rayo de luz central -->
+    <radialGradient id="glow" cx="50%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#ffd89b" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffd89b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mountFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d3b42"/>
+      <stop offset="100%" stop-color="#202a30"/>
+    </linearGradient>
+    <linearGradient id="mountNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#121820"/>
+      <stop offset="100%" stop-color="#0a0e14"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1500" height="2400" fill="url(#sky)"/>
+  <ellipse cx="750" cy="1750" rx="900" ry="700" fill="url(#glow)"/>
+
+  <!-- Cordillera lejana -->
+  <path d="M0 1500 L250 1250 L480 1430 L720 1150 L980 1420 L1230 1210 L1500 1460 L1500 2400 L0 2400 Z"
+        fill="url(#mountFar)" opacity="0.9"/>
+
+  <!-- Cordillera cercana (más oscura, siluetas de pinos) -->
+  <path d="M0 1720 L180 1560 L360 1700 L560 1500 L760 1690 L980 1520 L1200 1700 L1500 1560 L1500 2400 L0 2400 Z"
+        fill="url(#mountNear)"/>
+  <!-- Pinos recortados en la cresta cercana -->
+  <g fill="#0a0e14">
+    <path d="M300 1660 l16 60 l-32 0 z"/><path d="M340 1650 l14 55 l-28 0 z"/>
+    <path d="M690 1640 l18 70 l-36 0 z"/><path d="M730 1655 l14 55 l-28 0 z"/>
+    <path d="M1080 1630 l18 68 l-36 0 z"/><path d="M1120 1648 l14 56 l-28 0 z"/>
+  </g>
+
+  <!-- Siluetas diminutas del grupo (5 figuras) al pie de la montaña -->
+  <g fill="#05070a">
+    <g transform="translate(690,1660)">
+      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="20" rx="3"/>
+    </g>
+    <g transform="translate(715,1666)">
+      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="19" rx="3"/>
+    </g>
+    <g transform="translate(740,1662)">
+      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="21" rx="3"/>
+    </g>
+    <g transform="translate(765,1668)">
+      <circle cx="0" cy="0" r="4.5"/><rect x="-4" y="4" width="8" height="18" rx="3"/>
+    </g>
+    <g transform="translate(788,1664)">
+      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="20" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Sello de marca: icono "sin cobertura" arriba a la derecha -->
+  <g transform="translate(1270,210)" opacity="0.92">
+    <!-- barras de señal a cero (contorno) -->
+    <g fill="none" stroke="#e8b36a" stroke-width="7">
+      <rect x="0"  y="60" width="22" height="30"/>
+      <rect x="34" y="42" width="22" height="48"/>
+      <rect x="68" y="22" width="22" height="68"/>
+      <rect x="102" y="2" width="22" height="88"/>
+    </g>
+    <!-- diagonal de "tachado" -->
+    <line x1="-10" y1="100" x2="134" y2="-6" stroke="#ff5a4d" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- TÍTULO -->
+  <text x="750" y="560" text-anchor="middle"
+        font-family="Arial Black, Arial, sans-serif" font-weight="900"
+        font-size="200" letter-spacing="6" fill="#ffffff">SEÑAL</text>
+  <text x="750" y="760" text-anchor="middle"
+        font-family="Arial Black, Arial, sans-serif" font-weight="900"
+        font-size="200" letter-spacing="14" fill="#ff5a4d">CERO</text>
+
+  <!-- Tagline -->
+  <text x="750" y="850" text-anchor="middle"
+        font-family="Georgia, serif" font-style="italic"
+        font-size="46" fill="#e8e8e8">Diecisiete días. Cero cobertura.</text>
+  <text x="750" y="910" text-anchor="middle"
+        font-family="Georgia, serif" font-style="italic"
+        font-size="46" fill="#e8e8e8">Una sola forma de salir.</text>
+
+  <!-- Autor -->
+  <text x="750" y="2300" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="700"
+        font-size="64" letter-spacing="8" fill="#ffffff">DAVID FERNÁNDEZ</text>
+
+  <!-- línea fina sobre el autor -->
+  <line x1="560" y1="2230" x2="940" y2="2230" stroke="#e8b36a" stroke-width="3"/>
+</svg>
