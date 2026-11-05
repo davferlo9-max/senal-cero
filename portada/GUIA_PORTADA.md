@@ -70,18 +70,25 @@ Calculadas para: tapa blanda, formato **12,7 × 20,32 cm (5×8")**, **~170 pági
 
 ---
 
-## Diseño actual (qué verá)
+## Diseño actual (qué verá) — ESTÉTICA MODERNA/JUVENIL
 
-- **Fondo:** cielo de tormenta en degradado (azul oscuro arriba → naranja cálido abajo),
-  con un rayo de luz; dos cordilleras superpuestas y cinco figuras diminutas al pie
-  (los cinco protagonistas). Transmite peligro + pequeñez + esperanza.
-- **Sello de marca:** icono de "sin cobertura" (barras a cero tachadas en rojo), arriba a la derecha.
-- **Título:** "SEÑAL" en blanco, "CERO" en rojo, tipografía de palo gruesa.
-- **Tagline:** *Diecisiete días. Cero cobertura. Una sola forma de salir.*
-- **Autor:** DAVID FERNÁNDEZ, abajo, con filete dorado.
-- **Contraportada:** gancho triple en rojo/blanco + sinopsis + línea de cierre + zona de ISBN
-  (que KDP rellena solo) + línea de categoría/edad.
-- **Lomo:** "SEÑAL CERO" + "D. FERNÁNDEZ" en vertical.
+**Concepto central:** la portada ES un móvil. Un smartphone estilizado en el centro, con la
+barra de estado mostrando «SIN SERVICIO · 0%» (barras de señal tachadas), y dentro de la
+pantalla, la montaña con las cinco figuras diminutas del grupo. La metáfora del libro, directa
+y reconocible incluso en la miniatura de Amazon.
+
+- **Paleta:** degradado atardecer-eléctrico (índigo → magenta → coral) con acento **cian** (#00e5ff).
+  Vibrante, contemporánea, muy YA. Nada de tonos apagados.
+- **Fondo:** patrón sutil de curvas de nivel topográficas (guiño a la supervivencia y los mapas).
+- **Título:** "SEÑAL" en blanco arriba; "CERO" en cian abajo, donde el **0 es un anillo con
+  muesca** que evoca a la vez un cero y un indicador de señal. Tipografía de palo gruesa y condensada.
+- **Tagline:** en un "chip" cian redondeado — *17 DÍAS · CERO COBERTURA · SALIR JUNTOS*.
+- **Autor:** DAVID FERNÁNDEZ, en versales espaciadas arriba.
+- **Contraportada:** panel oscuro con borde cian, gancho triple (cian/coral/blanco), sinopsis,
+  línea de cierre, zona de ISBN (la rellena KDP) y categoría/edad en cian.
+- **Lomo:** "SEÑAL CERO" + "D. FERNÁNDEZ" en vertical sobre negro.
+
+> Portada frontal ahora a **1600 × 2560 px** (ratio 1:1,6, el óptimo de KDP para eBook y tapa).
 
 ---
 

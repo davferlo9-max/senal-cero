@@ -1,101 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- PORTADA FRONTAL · SEÑAL CERO · 1500 x 2400 px (5x8" @300dpi, eBook y tapa) -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="2400" viewBox="0 0 1500 2400">
+<!-- PORTADA FRONTAL · SEÑAL CERO · REDISEÑO MODERNO/JUVENIL · 1600 x 2560 px (ratio KDP 1:1,6) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2560" viewBox="0 0 1600 2560">
   <defs>
-    <!-- Cielo de tormenta que se abre a un rayo de luz -->
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#1a2030"/>
-      <stop offset="45%" stop-color="#2b3a4a"/>
-      <stop offset="70%" stop-color="#4a5d63"/>
-      <stop offset="86%" stop-color="#c98a4b"/>
-      <stop offset="100%" stop-color="#e8b36a"/>
+    <!-- Degradado atardecer eléctrico -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%"  stop-color="#2b1055"/>
+      <stop offset="38%" stop-color="#6d2b7a"/>
+      <stop offset="68%" stop-color="#c13b76"/>
+      <stop offset="100%" stop-color="#ff7a59"/>
     </linearGradient>
-    <!-- Rayo de luz central -->
-    <radialGradient id="glow" cx="50%" cy="80%" r="55%">
-      <stop offset="0%" stop-color="#ffd89b" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#ffd89b" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="mountFar" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2d3b42"/>
-      <stop offset="100%" stop-color="#202a30"/>
+    <!-- Degradado de la "pantalla" interior (montaña) -->
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1b2a"/>
+      <stop offset="60%" stop-color="#14263d"/>
+      <stop offset="100%" stop-color="#1b3a5c"/>
     </linearGradient>
-    <linearGradient id="mountNear" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#121820"/>
-      <stop offset="100%" stop-color="#0a0e14"/>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ff7a59"/>
     </linearGradient>
+    <linearGradient id="mt1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d6a8f"/><stop offset="100%" stop-color="#14263d"/>
+    </linearGradient>
+    <clipPath id="phoneClip"><rect x="430" y="760" width="740" height="1240" rx="70"/></clipPath>
+    <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
   </defs>
 
   <!-- Fondo -->
-  <rect width="1500" height="2400" fill="url(#sky)"/>
-  <ellipse cx="750" cy="1750" rx="900" ry="700" fill="url(#glow)"/>
+  <rect width="1600" height="2560" fill="url(#bg)"/>
 
-  <!-- Cordillera lejana -->
-  <path d="M0 1500 L250 1250 L480 1430 L720 1150 L980 1420 L1230 1210 L1500 1460 L1500 2400 L0 2400 Z"
-        fill="url(#mountFar)" opacity="0.9"/>
-
-  <!-- Cordillera cercana (más oscura, siluetas de pinos) -->
-  <path d="M0 1720 L180 1560 L360 1700 L560 1500 L760 1690 L980 1520 L1200 1700 L1500 1560 L1500 2400 L0 2400 Z"
-        fill="url(#mountNear)"/>
-  <!-- Pinos recortados en la cresta cercana -->
-  <g fill="#0a0e14">
-    <path d="M300 1660 l16 60 l-32 0 z"/><path d="M340 1650 l14 55 l-28 0 z"/>
-    <path d="M690 1640 l18 70 l-36 0 z"/><path d="M730 1655 l14 55 l-28 0 z"/>
-    <path d="M1080 1630 l18 68 l-36 0 z"/><path d="M1120 1648 l14 56 l-28 0 z"/>
+  <!-- Patrón de curvas de nivel (topográfico) sutil -->
+  <g fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.10">
+    <path d="M-50 300 Q400 180 800 320 T1650 280"/>
+    <path d="M-50 360 Q400 250 800 390 T1650 350"/>
+    <path d="M-50 2180 Q420 2060 820 2210 T1650 2160"/>
+    <path d="M-50 2260 Q420 2150 820 2290 T1650 2250"/>
+    <circle cx="250" cy="1150" r="120"/><circle cx="250" cy="1150" r="170"/><circle cx="250" cy="1150" r="225"/>
+    <circle cx="1360" cy="1500" r="100"/><circle cx="1360" cy="1500" r="150"/><circle cx="1360" cy="1500" r="205"/>
   </g>
 
-  <!-- Siluetas diminutas del grupo (5 figuras) al pie de la montaña -->
-  <g fill="#05070a">
-    <g transform="translate(690,1660)">
-      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="20" rx="3"/>
-    </g>
-    <g transform="translate(715,1666)">
-      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="19" rx="3"/>
-    </g>
-    <g transform="translate(740,1662)">
-      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="21" rx="3"/>
-    </g>
-    <g transform="translate(765,1668)">
-      <circle cx="0" cy="0" r="4.5"/><rect x="-4" y="4" width="8" height="18" rx="3"/>
-    </g>
-    <g transform="translate(788,1664)">
-      <circle cx="0" cy="0" r="5"/><rect x="-4" y="4" width="8" height="20" rx="3"/>
+  <!-- ====== "MÓVIL" con la montaña dentro de la pantalla ====== -->
+  <!-- Carcasa -->
+  <rect x="410" y="740" width="780" height="1280" rx="92" fill="#0a0a12"/>
+  <rect x="410" y="740" width="780" height="1280" rx="92" fill="none" stroke="#00e5ff" stroke-width="5" opacity="0.65"/>
+  <!-- Pantalla -->
+  <rect x="430" y="760" width="740" height="1240" rx="70" fill="url(#screen)"/>
+
+  <!-- Contenido de la pantalla (recortado) -->
+  <g clip-path="url(#phoneClip)">
+    <rect x="430" y="760" width="740" height="1240" fill="url(#screen)"/>
+    <!-- sol/luna cálida -->
+    <circle cx="800" cy="1180" r="150" fill="url(#sun)" opacity="0.95"/>
+    <circle cx="800" cy="1180" r="210" fill="#ffd166" opacity="0.18" filter="url(#soft)"/>
+    <!-- montañas -->
+    <path d="M430 1600 L560 1380 L700 1540 L820 1300 L960 1520 L1090 1360 L1170 1470 L1170 2000 L430 2000 Z" fill="url(#mt1)"/>
+    <path d="M430 1760 L540 1620 L680 1740 L820 1580 L980 1760 L1110 1620 L1170 1700 L1170 2000 L430 2000 Z" fill="#0b1826"/>
+    <!-- cinco figuritas -->
+    <g fill="#05070a">
+      <g transform="translate(760,1720)"><circle r="7"/><rect x="-5" y="6" width="10" height="26" rx="4"/></g>
+      <g transform="translate(788,1728)"><circle r="7"/><rect x="-5" y="6" width="10" height="24" rx="4"/></g>
+      <g transform="translate(816,1722)"><circle r="7"/><rect x="-5" y="6" width="10" height="27" rx="4"/></g>
+      <g transform="translate(844,1730)"><circle r="6"/><rect x="-5" y="6" width="10" height="23" rx="4"/></g>
+      <g transform="translate(870,1724)"><circle r="7"/><rect x="-5" y="6" width="10" height="26" rx="4"/></g>
     </g>
   </g>
 
-  <!-- Sello de marca: icono "sin cobertura" arriba a la derecha -->
-  <g transform="translate(1270,210)" opacity="0.92">
-    <!-- barras de señal a cero (contorno) -->
-    <g fill="none" stroke="#e8b36a" stroke-width="7">
-      <rect x="0"  y="60" width="22" height="30"/>
-      <rect x="34" y="42" width="22" height="48"/>
-      <rect x="68" y="22" width="22" height="68"/>
-      <rect x="102" y="2" width="22" height="88"/>
+  <!-- Barra de estado de la pantalla: SIN SERVICIO + barras a cero -->
+  <g transform="translate(470,800)">
+    <!-- barras de señal (vacías) -->
+    <g fill="#3a4a5a">
+      <rect x="0" y="22" width="12" height="12"/><rect x="18" y="14" width="12" height="20"/>
+      <rect x="36" y="6" width="12" height="28"/><rect x="54" y="-2" width="12" height="36"/>
     </g>
-    <!-- diagonal de "tachado" -->
-    <line x1="-10" y1="100" x2="134" y2="-6" stroke="#ff5a4d" stroke-width="9" stroke-linecap="round"/>
+    <line x1="-6" y1="36" x2="72" y2="-8" stroke="#ff4d4d" stroke-width="6" stroke-linecap="round"/>
+    <text x="90" y="28" font-family="Arial, sans-serif" font-weight="700" font-size="34" fill="#ff6b6b" letter-spacing="2">SIN SERVICIO</text>
+    <text x="640" y="28" text-anchor="end" font-family="Arial, sans-serif" font-size="30" fill="#5a6a7a">0%</text>
   </g>
 
-  <!-- TÍTULO -->
-  <text x="750" y="560" text-anchor="middle"
+  <!-- ====== TÍTULO (grande, condensado, moderno) ====== -->
+  <text x="800" y="420" text-anchor="middle"
         font-family="Arial Black, Arial, sans-serif" font-weight="900"
-        font-size="200" letter-spacing="6" fill="#ffffff">SEÑAL</text>
-  <text x="750" y="760" text-anchor="middle"
-        font-family="Arial Black, Arial, sans-serif" font-weight="900"
-        font-size="200" letter-spacing="14" fill="#ff5a4d">CERO</text>
+        font-size="250" letter-spacing="-6" fill="#ffffff">SEÑAL</text>
 
-  <!-- Tagline -->
-  <text x="750" y="850" text-anchor="middle"
-        font-family="Georgia, serif" font-style="italic"
-        font-size="46" fill="#e8e8e8">Diecisiete días. Cero cobertura.</text>
-  <text x="750" y="910" text-anchor="middle"
-        font-family="Georgia, serif" font-style="italic"
-        font-size="46" fill="#e8e8e8">Una sola forma de salir.</text>
+  <!-- "CER" + "0" donde el 0 son barras de señal -->
+  <g>
+    <text x="700" y="2360" text-anchor="middle"
+          font-family="Arial Black, Arial, sans-serif" font-weight="900"
+          font-size="250" letter-spacing="-4" fill="#00e5ff">CER</text>
+    <!-- el "0" reinterpretado como anillo con muesca de señal -->
+    <g transform="translate(980,2270)">
+      <circle cx="0" cy="0" r="92" fill="none" stroke="#00e5ff" stroke-width="42"/>
+      <rect x="-14" y="-150" width="28" height="70" fill="#ff7a59"/>
+    </g>
+  </g>
+
+  <!-- Tagline en "chip" moderno -->
+  <rect x="430" y="2420" width="740" height="66" rx="33" fill="#00e5ff"/>
+  <text x="800" y="2464" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="800" font-size="34"
+        letter-spacing="3" fill="#10121f">17 DÍAS · CERO COBERTURA · SALIR JUNTOS</text>
 
   <!-- Autor -->
-  <text x="750" y="2300" text-anchor="middle"
-        font-family="Arial, sans-serif" font-weight="700"
-        font-size="64" letter-spacing="8" fill="#ffffff">DAVID FERNÁNDEZ</text>
-
-  <!-- línea fina sobre el autor -->
-  <line x1="560" y1="2230" x2="940" y2="2230" stroke="#e8b36a" stroke-width="3"/>
+  <text x="800" y="2560" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="700" font-size="46"
+        letter-spacing="10" fill="#ffffff" opacity="0.001">DAVID FERNÁNDEZ</text>
+  <text x="800" y="700" text-anchor="middle"
+        font-family="Arial, sans-serif" font-weight="700" font-size="44"
+        letter-spacing="12" fill="#ffffff">DAVID FERNÁNDEZ</text>
 </svg>
