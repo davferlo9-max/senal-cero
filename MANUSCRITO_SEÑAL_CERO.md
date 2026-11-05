@@ -1,13 +1,39 @@
 # SEÑAL CERO
 
-*Nadie viene a por nosotros. Nos las apañamos solos.*
-
-Una novela de aventura y supervivencia
+## DAVID FERNÁNDEZ
 
 ---
 
-# SEÑAL CERO
-### Novela — versión extendida
+### Página de créditos
+
+**SEÑAL CERO**
+
+© [Año] David Fernández
+
+Todos los derechos reservados. Ninguna parte de esta publicación puede ser reproducida, distribuida o transmitida en cualquier forma o por cualquier medio, sin el permiso previo y por escrito del autor, salvo citas breves en reseñas.
+
+Esta es una obra de ficción. Los nombres, personajes, lugares y sucesos son producto de la imaginación del autor o se usan de manera ficticia. Cualquier parecido con personas reales, vivas o fallecidas, o con hechos reales, es pura coincidencia.
+
+Primera edición: [Mes, Año]
+
+Diseño de cubierta: [su nombre / diseñador]
+
+ISBN: [lo asigna KDP al publicar]
+
+Publicado de forma independiente.
+
+---
+
+### Dedicatoria
+
+*Para quien, alguna vez, se ha perdido con la gente correcta.*
+
+---
+
+### Epígrafe
+
+> *«Sin cobertura en los próximos 40 km.»*
+> — Un cartel oxidado que nadie lee a tiempo
 
 ---
 
@@ -2138,3 +2164,35 @@ No lo tenía en ninguna lista.
 Fue, con muchísima diferencia, lo mejor del viaje.
 
 **FIN**
+
+---
+
+### Nota del autor
+
+*Señal Cero* nació de una pregunta sencilla: ¿qué pasaría si, de golpe, el mundo dejara de responder? Sin mapas, sin buscadores, sin nadie a quien preguntarle nada. Y quién querrías tener al lado cuando eso ocurriera.
+
+La supervivencia de esta historia es realista dentro de lo que cabe en una novela: los métodos para potabilizar agua, hacer fuego o cruzar un río existen y funcionan, pero este libro es una aventura, no un manual. Si alguna vez te pierdes de verdad en la montaña, hazle caso a los profesionales, no a Nora.
+
+Gracias por acompañar a estos cinco hasta el final.
+
+---
+
+### Agradecimientos
+
+Gracias a quienes leyeron esta historia antes que nadie y me dijeron la verdad.
+
+Y gracias a ti, que has llegado hasta aquí. Si *Señal Cero* te ha hecho pasar frío, hambre o miedo —y alguna vez te ha hecho reír en mitad de todo eso—, ha cumplido su misión.
+
+Una reseña, aunque sea de una sola línea, es la brasa que mantiene vivo a un autor nuevo. Cuídala como Teo cuidó la suya.
+
+— David Fernández
+
+---
+
+### Sobre el autor
+
+David Fernández escribe historias sobre gente normal en situaciones que dejan de serlo.
+
+*Señal Cero* es su primera novela.
+
+Si te ha gustado, cuéntaselo a alguien que necesite una buena aventura. Es la mejor señal que puedes enviar.

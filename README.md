@@ -16,6 +16,13 @@ que lleguen las primeras nieves... y antes de matarse entre ellos.
 
 ---
 
+## 🚀 ¿Listo para publicar?
+
+Empieza por **`🚀_LISTO_PARA_PUBLICAR.md`**: es la guía maestra que reúne el estado de todo
+y el paso a paso para subir el libro a Amazon KDP.
+
+---
+
 ## Contenido del repositorio
 
 ### Manuscrito
